@@ -106,15 +106,15 @@ class GlassyEval(Node):
                 get_projection_on_line = np.dot([self.x - self.initial_x, self.y - self.initial_y], [np.cos(self.initial_yaw), np.sin(self.initial_yaw)])
 
                 with open("~/.tt/tt.txt", "a") as myfile:
-                    myfile.write('MISSION SCORE ------------------------------------------------------------------------------')
-                    myfile.write('ALONG TRACK DISTANCE (larger is better): ' + str(get_projection_on_line))
-                    myfile.write('CROSS TRACK DISTANCE SQUARED INTEGRAL (lower is better): ' + str(self.cross_track_distance))
-                    myfile.write('VELOCITY OVER MAX SQUARED INTEGRAL (lower is better): ' + str(self.velocity_above_max))
-                    myfile.write('ALONG TRACK DISTANCE SCORE: ' + str(get_projection_on_line * self.total_dist_coef))
-                    myfile.write('CROSS TRACK DISTANCE INTEGRAL SCORE: ' + str(- self.cross_dist_coef * self.cross_track_distance))
-                    myfile.write('VELOCITY OVER MAX INTEGRAL SCORE: ' + str(- self.vel_coef * self.velocity_above_max))
-                    myfile.write('TOTAL SCORE: ' + str(get_projection_on_line * self.total_dist_coef - self.cross_dist_coef * self.cross_track_distance - self.vel_coef * self.velocity_above_max))
-                    myfile.write('MISSION SCORE ------------------------------------------------------------------------------')
+                    myfile.write('MISSION SCORE ------------------------------------------------------------------------------\n')
+                    myfile.write('ALONG TRACK DISTANCE (larger is better): ' + str(get_projection_on_line)+'\n')
+                    myfile.write('CROSS TRACK DISTANCE SQUARED INTEGRAL (lower is better): ' + str(self.cross_track_distance)+'\n')
+                    myfile.write('VELOCITY OVER MAX SQUARED INTEGRAL (lower is better): ' + str(self.velocity_above_max)+'\n')
+                    myfile.write('ALONG TRACK DISTANCE SCORE: ' + str(get_projection_on_line * self.total_dist_coef)+'\n')
+                    myfile.write('CROSS TRACK DISTANCE INTEGRAL SCORE: ' + str(- self.cross_dist_coef * self.cross_track_distance)+'\n')
+                    myfile.write('VELOCITY OVER MAX INTEGRAL SCORE: ' + str(- self.vel_coef * self.velocity_above_max)+'\n')
+                    myfile.write('TOTAL SCORE: ' + str(get_projection_on_line * self.total_dist_coef - self.cross_dist_coef * self.cross_track_distance - self.vel_coef * self.velocity_above_max)+'\n')
+                    myfile.write('MISSION SCORE ------------------------------------------------------------------------------'+'\n')
 
 
         else:
